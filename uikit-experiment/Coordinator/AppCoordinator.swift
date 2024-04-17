@@ -20,4 +20,10 @@ final class AppCoordinator: NSObject, Coordinator {
         homeViewController.coordinator = self
         navigationController.setViewControllers([homeViewController], animated: false)
     }
+    
+    func presentColorPicker() {
+        let colorPickerViewController = ColorPickerViewController()
+        colorPickerViewController.coordinator = self
+        navigationController.pushViewController(colorPickerViewController, animated: true)
+    }
 }

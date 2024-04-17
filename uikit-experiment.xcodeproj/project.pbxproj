@@ -12,6 +12,7 @@
 		6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE082BD07836003EC926 /* HomeViewController.swift */; };
 		6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0B2BD07A36003EC926 /* UEViewController.swift */; };
 		6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */; };
+		6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */; };
 		65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E95D4B2BD026AF00B3F86B /* AppDelegate.swift */; };
 		65E95D552BD026AF00B3F86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D542BD026AF00B3F86B /* Assets.xcassets */; };
 		65E95D582BD026AF00B3F86B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D572BD026AF00B3F86B /* Base */; };
@@ -24,6 +25,7 @@
 		6559FE082BD07836003EC926 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6559FE0B2BD07A36003EC926 /* UEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEViewController.swift; sourceTree = "<group>"; };
 		6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		65E95D482BD026AF00B3F86B /* uikit-experiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uikit-experiment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E95D4B2BD026AF00B3F86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E95D542BD026AF00B3F86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		6559FE112BD087AB003EC926 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
 		65E95D3F2BD026AE00B3F86B = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				6559FE072BD07829003EC926 /* Home */,
+				6559FE112BD087AB003EC926 /* ColorPicker */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 			files = (
 				6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */,
 				65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */,
+				6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */,
 				6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */,
 				6559FE062BD0774E003EC926 /* Coordinator.swift in Sources */,
 				6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */,

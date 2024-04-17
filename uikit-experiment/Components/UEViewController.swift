@@ -7,8 +7,8 @@
 
 import UIKit
 
-class UEViewController: UIViewController {
-    weak var coordinator: Coordinator?
+class UEViewController<CoordinatorType: Coordinator>: UIViewController {
+    weak var coordinator: CoordinatorType?
     
     override func viewDidLoad() {
         setupUI()
