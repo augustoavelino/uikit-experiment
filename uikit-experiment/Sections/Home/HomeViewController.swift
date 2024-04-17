@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  uikit-experiment
 //
 //  Created by Augusto Avelino on 17/04/24.
@@ -7,16 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UEViewController {
+    
+    // MARK: UI
+    
     let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hello World!"
         return label
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    // MARK: - Setup
+    
+    override func setupUI() {
         setupLabel()
     }
     
