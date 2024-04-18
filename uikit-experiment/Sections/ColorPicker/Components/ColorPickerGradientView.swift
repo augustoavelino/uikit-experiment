@@ -56,8 +56,6 @@ class ColorPickerGradientView: UIView {
         super.init(frame: frame)
         layer.addSublayer(gradientLayer)
         layer.addSublayer(blackWhiteLayer)
-        layer.borderColor = UIColor.darkGray.cgColor
-        layer.borderWidth = 1.0
     }
     
     required init?(coder: NSCoder) {

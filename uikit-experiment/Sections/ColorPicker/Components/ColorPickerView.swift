@@ -26,8 +26,10 @@ class ColorPickerView: UIView {
     }()
     let scopeView: UIView = {
         let scopeView = UIImageView(image: UIImage(systemName: "scope"))
+        scopeView.tintColor = .lightGray
         scopeView.translatesAutoresizingMaskIntoConstraints = false
         scopeView.contentMode = .scaleAspectFit
+        scopeView.layer.compositingFilter = "linearDodgeBlendMode"
         return scopeView
     }()
     var scopeCenterXConstraint: NSLayoutConstraint?
@@ -49,6 +51,8 @@ class ColorPickerView: UIView {
     private func setupUI() {
         setupGradientView()
         setupScopeView()
+        layer.borderColor = UIColor.darkGray.cgColor
+        layer.borderWidth = 1.0
     }
     
     private func setupGradientView() {
@@ -71,11 +75,15 @@ class ColorPickerView: UIView {
     
     // MARK: - Actions
     
+    fileprivate func limitPoint(_ point: CGPoint) -> CGPoint {
+        let x = max(1.0, min(point.x, bounds.width - 1.0))
+        let y = max(1.0, min(point.y, bounds.height - 1.0))
+        return CGPoint(x: x, y: y)
+    }
+    
     fileprivate func moveScope(to point: CGPoint) {
-        let x = max(0.0, min(point.x, bounds.width))
-        let y = max(0.0, min(point.y, bounds.height))
-        scopeCenterXConstraint?.constant = x
-        scopeCenterYConstraint?.constant = y
+        scopeCenterXConstraint?.constant = point.x
+        scopeCenterYConstraint?.constant = point.y
     }
     
     fileprivate func getColor(of point: CGPoint) -> UIColor? {
@@ -111,8 +119,9 @@ class ColorPickerView: UIView {
     private func handleTouch(_ touch: UITouch?) {
         guard let touch = touch else { return }
         let location = touch.location(in: self)
-        moveScope(to: location)
-        let color = getColor(of: location)
+        let limitedPoint = limitPoint(location)
+        moveScope(to: limitedPoint)
+        let color = getColor(of: limitedPoint)
         delegate?.colorPicker(self, didSelectColor: color)
     }
 }
