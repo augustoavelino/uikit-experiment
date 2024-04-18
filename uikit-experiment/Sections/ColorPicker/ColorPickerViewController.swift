@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class ColorPickerViewController: UEViewController<AppCoordinator> {
+    
+    let disposeBag = DisposeBag()
     
     // MARK: UI
     
@@ -36,17 +39,17 @@ class ColorPickerViewController: UEViewController<AppCoordinator> {
     }
     
     private func setupPickerView() {
-        pickerView.delegate = self
         view.addSubview(pickerView)
         pickerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         pickerView.heightAnchor.constraint(equalToConstant: 280.0).isActive = true
     }
-}
-
-extension ColorPickerViewController: ColorPickerViewDelegate {
-    func colorPicker(_ colorPicker: ColorPickerView, didSelectColor color: UIColor?) {
-        currentColorView.backgroundColor = color
+    
+    override func bindUI() {
+        pickerView.rx.value
+            .map({ $0.uiColor })
+            .bind(to: currentColorView.rx.backgroundColor)
+            .disposed(by: disposeBag)
     }
 }

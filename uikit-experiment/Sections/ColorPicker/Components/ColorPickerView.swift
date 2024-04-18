@@ -6,16 +6,24 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol ColorPickerViewDelegate: AnyObject {
     func colorPicker(_ colorPicker: ColorPickerView, didSelectColor color: UIColor?)
 }
 
-class ColorPickerView: UIView {
+class ColorPickerView: UIControl {
     
     // MARK: Props
     
     weak var delegate: ColorPickerViewDelegate?
+    var value = ColorPickerValue(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
+        didSet { 
+            sendActions(for: .valueChanged)
+            delegate?.colorPicker(self, didSelectColor: value.uiColor)
+        }
+    }
     
     // MARK: UI
     
@@ -86,7 +94,7 @@ class ColorPickerView: UIView {
         scopeCenterYConstraint?.constant = point.y
     }
     
-    fileprivate func getColor(of point: CGPoint) -> UIColor? {
+    fileprivate func getValue(of point: CGPoint) -> ColorPickerValue? {
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -101,7 +109,7 @@ class ColorPickerView: UIView {
         let blue = CGFloat(pixel[2]) / 255.0
         let alpha = CGFloat(pixel[3]) / 255.0
         
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        return ColorPickerValue(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     // MARK: - Events
@@ -121,7 +129,30 @@ class ColorPickerView: UIView {
         let location = touch.location(in: self)
         let limitedPoint = limitPoint(location)
         moveScope(to: limitedPoint)
-        let color = getColor(of: limitedPoint)
-        delegate?.colorPicker(self, didSelectColor: color)
+        guard let colorValue = getValue(of: limitedPoint) else { return }
+        value = colorValue
     }
+}
+
+// MARK: - Reactive Extension
+
+extension Reactive where Base: ColorPickerView {
+    var value: ControlProperty<ColorPickerValue> {
+        controlProperty(
+            editingEvents: .valueChanged,
+            getter: { $0.value },
+            setter: { $0.value = $1 }
+        )
+    }
+}
+
+// MARK: - ColorPickerValue
+
+struct ColorPickerValue {
+    var red: CGFloat
+    var green: CGFloat
+    var blue: CGFloat
+    var alpha: CGFloat
+    
+    var uiColor: UIColor { UIColor(red: red, green: green, blue: blue, alpha: alpha) }
 }
