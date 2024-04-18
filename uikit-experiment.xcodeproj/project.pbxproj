@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45EF357BF3592A2D5D03DAA8 /* Pods_uikit_experiment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552613219A23BA444CBC931A /* Pods_uikit_experiment.framework */; };
+		655857F92BD1695200C7192C /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655857F82BD1695200C7192C /* ColorPickerView.swift */; };
 		6559FE062BD0774E003EC926 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE052BD0774E003EC926 /* Coordinator.swift */; };
 		6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE082BD07836003EC926 /* HomeViewController.swift */; };
 		6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0B2BD07A36003EC926 /* UEViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		28B95CB4ED9FABEACD795184 /* Pods-uikit-experiment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uikit-experiment.debug.xcconfig"; path = "Target Support Files/Pods-uikit-experiment/Pods-uikit-experiment.debug.xcconfig"; sourceTree = "<group>"; };
 		552613219A23BA444CBC931A /* Pods_uikit_experiment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uikit_experiment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		655857F82BD1695200C7192C /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		6559FE052BD0774E003EC926 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6559FE082BD07836003EC926 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6559FE0B2BD07A36003EC926 /* UEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		655857FA2BD16B9000C7192C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				655857F82BD1695200C7192C /* ColorPickerView.swift */,
+				6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */,
+				65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		6559FE042BD07733003EC926 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */,
-				6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */,
-				65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */,
+				655857FA2BD16B9000C7192C /* Components */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -278,6 +289,7 @@
 				6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */,
 				6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */,
 				65C54FB52BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift in Sources */,
+				655857F92BD1695200C7192C /* ColorPickerView.swift in Sources */,
 				6559FE062BD0774E003EC926 /* Coordinator.swift in Sources */,
 				6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */,
 				6580BB0E2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift in Sources */,
