@@ -17,6 +17,7 @@
 		6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */; };
 		6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */; };
 		65722E922BD211F100F38E3E /* FlipDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65722E912BD211F100F38E3E /* FlipDestinationViewController.swift */; };
+		657B400F2BD3323100704CEA /* CustomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B400E2BD3323100704CEA /* CustomTransitioning.swift */; };
 		6580BB0E2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */; };
 		65C54FB52BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */; };
 		65CC422A2BD1C68E009CF0B7 /* TransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC42292BD1C68E009CF0B7 /* TransitionsViewController.swift */; };
@@ -38,6 +39,7 @@
 		6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		65722E912BD211F100F38E3E /* FlipDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipDestinationViewController.swift; sourceTree = "<group>"; };
+		657B400E2BD3323100704CEA /* CustomTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioning.swift; sourceTree = "<group>"; };
 		6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerGradientView.swift; sourceTree = "<group>"; };
 		65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPreviewCircle.swift; sourceTree = "<group>"; };
 		65CC42292BD1C68E009CF0B7 /* TransitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		651A8F442BD2997A00467594 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				657B400E2BD3323100704CEA /* CustomTransitioning.swift */,
 				651A8F452BD299A800467594 /* FlipTransitioning.swift */,
 			);
 			path = Animations;
@@ -330,6 +333,7 @@
 				6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */,
 				65C54FB52BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift in Sources */,
 				651A8F462BD299A800467594 /* FlipTransitioning.swift in Sources */,
+				657B400F2BD3323100704CEA /* CustomTransitioning.swift in Sources */,
 				655857F92BD1695200C7192C /* ColorPickerView.swift in Sources */,
 				65722E922BD211F100F38E3E /* FlipDestinationViewController.swift in Sources */,
 				65CC422C2BD1C697009CF0B7 /* TransitionsCoordinator.swift in Sources */,
