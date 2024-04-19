@@ -10,6 +10,7 @@ import UIKit
 final class AppCoordinator: NSObject, Coordinator {
     let navigationController: UINavigationController
     private(set) var children: [any Coordinator] = []
+    weak var parent: (any Coordinator)?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,5 +26,16 @@ final class AppCoordinator: NSObject, Coordinator {
         let colorPickerViewController = ColorPickerViewController()
         colorPickerViewController.coordinator = self
         navigationController.pushViewController(colorPickerViewController, animated: true)
+    }
+    
+    func presentTransitions() {
+        let coordinator = TransitionsCoordinator(navigationController: navigationController)
+        coordinator.parent = self
+        children.append(coordinator)
+        coordinator.start()
+    }
+    
+    func removeChild(_ child: any Coordinator) {
+        children.removeAll(where: { $0.isEqual(child) })
     }
 }

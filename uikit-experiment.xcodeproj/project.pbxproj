@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		45EF357BF3592A2D5D03DAA8 /* Pods_uikit_experiment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552613219A23BA444CBC931A /* Pods_uikit_experiment.framework */; };
+		651A8F462BD299A800467594 /* FlipTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A8F452BD299A800467594 /* FlipTransitioning.swift */; };
+		654F4F422BD2B34E00C49F55 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654F4F412BD2B34E00C49F55 /* TransitionType.swift */; };
 		655857F92BD1695200C7192C /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655857F82BD1695200C7192C /* ColorPickerView.swift */; };
 		6559FE062BD0774E003EC926 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE052BD0774E003EC926 /* Coordinator.swift */; };
 		6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE082BD07836003EC926 /* HomeViewController.swift */; };
 		6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0B2BD07A36003EC926 /* UEViewController.swift */; };
 		6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */; };
 		6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */; };
+		65722E922BD211F100F38E3E /* FlipDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65722E912BD211F100F38E3E /* FlipDestinationViewController.swift */; };
 		6580BB0E2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */; };
 		65C54FB52BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */; };
+		65CC422A2BD1C68E009CF0B7 /* TransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC42292BD1C68E009CF0B7 /* TransitionsViewController.swift */; };
+		65CC422C2BD1C697009CF0B7 /* TransitionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC422B2BD1C697009CF0B7 /* TransitionsCoordinator.swift */; };
 		65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E95D4B2BD026AF00B3F86B /* AppDelegate.swift */; };
 		65E95D552BD026AF00B3F86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D542BD026AF00B3F86B /* Assets.xcassets */; };
 		65E95D582BD026AF00B3F86B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D572BD026AF00B3F86B /* Base */; };
@@ -24,14 +29,19 @@
 /* Begin PBXFileReference section */
 		28B95CB4ED9FABEACD795184 /* Pods-uikit-experiment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uikit-experiment.debug.xcconfig"; path = "Target Support Files/Pods-uikit-experiment/Pods-uikit-experiment.debug.xcconfig"; sourceTree = "<group>"; };
 		552613219A23BA444CBC931A /* Pods_uikit_experiment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uikit_experiment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		651A8F452BD299A800467594 /* FlipTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTransitioning.swift; sourceTree = "<group>"; };
+		654F4F412BD2B34E00C49F55 /* TransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
 		655857F82BD1695200C7192C /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		6559FE052BD0774E003EC926 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6559FE082BD07836003EC926 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6559FE0B2BD07A36003EC926 /* UEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEViewController.swift; sourceTree = "<group>"; };
 		6559FE0D2BD07B18003EC926 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6559FE122BD087C0003EC926 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		65722E912BD211F100F38E3E /* FlipDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipDestinationViewController.swift; sourceTree = "<group>"; };
 		6580BB0D2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerGradientView.swift; sourceTree = "<group>"; };
 		65C54FB42BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPreviewCircle.swift; sourceTree = "<group>"; };
+		65CC42292BD1C68E009CF0B7 /* TransitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsViewController.swift; sourceTree = "<group>"; };
+		65CC422B2BD1C697009CF0B7 /* TransitionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsCoordinator.swift; sourceTree = "<group>"; };
 		65E95D482BD026AF00B3F86B /* uikit-experiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uikit-experiment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E95D4B2BD026AF00B3F86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E95D542BD026AF00B3F86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +69,14 @@
 				C8FDEA92FECE4FF5AF09A480 /* Pods-uikit-experiment.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		651A8F442BD2997A00467594 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				651A8F452BD299A800467594 /* FlipTransitioning.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		655857FA2BD16B9000C7192C /* Components */ = {
@@ -103,6 +121,26 @@
 				655857FA2BD16B9000C7192C /* Components */,
 			);
 			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		65722E902BD211D000F38E3E /* Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				65722E912BD211F100F38E3E /* FlipDestinationViewController.swift */,
+			);
+			path = Destinations;
+			sourceTree = "<group>";
+		};
+		65CC42282BD1C67D009CF0B7 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				654F4F412BD2B34E00C49F55 /* TransitionType.swift */,
+				65CC422B2BD1C697009CF0B7 /* TransitionsCoordinator.swift */,
+				65CC42292BD1C68E009CF0B7 /* TransitionsViewController.swift */,
+				651A8F442BD2997A00467594 /* Animations */,
+				65722E902BD211D000F38E3E /* Destinations */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		65E95D3F2BD026AE00B3F86B = {
@@ -158,6 +196,7 @@
 			children = (
 				6559FE072BD07829003EC926 /* Home */,
 				6559FE112BD087AB003EC926 /* ColorPicker */,
+				65CC42282BD1C67D009CF0B7 /* Transitions */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -286,13 +325,18 @@
 			files = (
 				6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */,
 				65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */,
+				654F4F422BD2B34E00C49F55 /* TransitionType.swift in Sources */,
 				6559FE132BD087C0003EC926 /* ColorPickerViewController.swift in Sources */,
 				6559FE0E2BD07B18003EC926 /* AppCoordinator.swift in Sources */,
 				65C54FB52BD0B41D0019D7D3 /* ColorPickerPreviewCircle.swift in Sources */,
+				651A8F462BD299A800467594 /* FlipTransitioning.swift in Sources */,
 				655857F92BD1695200C7192C /* ColorPickerView.swift in Sources */,
+				65722E922BD211F100F38E3E /* FlipDestinationViewController.swift in Sources */,
+				65CC422C2BD1C697009CF0B7 /* TransitionsCoordinator.swift in Sources */,
 				6559FE062BD0774E003EC926 /* Coordinator.swift in Sources */,
 				6559FE092BD07836003EC926 /* HomeViewController.swift in Sources */,
 				6580BB0E2BD08E2C00F3F7B4 /* ColorPickerGradientView.swift in Sources */,
+				65CC422A2BD1C68E009CF0B7 /* TransitionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

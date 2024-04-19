@@ -1,95 +1,80 @@
 //
-//  HomeViewController.swift
+//  TransitionsViewController.swift
 //  uikit-experiment
 //
-//  Created by Augusto Avelino on 17/04/24.
+//  Created by Augusto Avelino on 18/04/24.
 //
 
 import UIKit
 
-class HomeViewController: UEViewController<AppCoordinator> {
+class TransitionsViewController: UEViewController<TransitionsCoordinator> {
     
     // MARK: Props
     
-    fileprivate static let cellReuseIdentifier = "HomeCell"
-    private let items: [HomeCellData] = [
-        HomeCellData(item: .colorPicker, text: "Color Picker"),
-        HomeCellData(item: .transitions, text: "Transitions"),
+    fileprivate static let cellReuseIdentifier = "TransitionsCell"
+    private let items: [TransitionItemData] = [
+        TransitionItemData(type: .flip, text: "Flip"),
     ]
     
     // MARK: UI
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: HomeViewController.cellReuseIdentifier)
+    let tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: TransitionsViewController.cellReuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dataSource = self
-        tableView.delegate = self
         return tableView
     }()
     
     // MARK: - Setup
     
     override func setupUI() {
-        title = "Home"
+        title = "Transitions"
         view.backgroundColor = .systemBackground
         setupTableView()
     }
     
     private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
-    
-    // MARK: - Navigation
-    
-    fileprivate func performRoute(for item: HomeItem) {
-        switch item {
-        case .colorPicker: coordinator?.presentColorPicker()
-        case .transitions: coordinator?.presentTransitions()
-        }
-    }
 }
 
 // MARK: - UITableViewDataSource
 
-extension HomeViewController: UITableViewDataSource {
+extension TransitionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.row < items.count else { return UITableViewCell() }
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewController.cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TransitionsViewController.cellReuseIdentifier, for: indexPath)
         var configuration = cell.defaultContentConfiguration()
         configuration.text = items[indexPath.row].text
         cell.contentConfiguration = configuration
-        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 
-extension HomeViewController: UITableViewDelegate {
+extension TransitionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
         guard indexPath.row < items.count else { return }
-        performRoute(for: items[indexPath.row].item)
+        let transitionType = items[indexPath.row].type
+        coordinator?.performRoute(for: transitionType)
     }
 }
 
-// MARK: - Home Items
+// MARK: - Item data
 
-enum HomeItem: CaseIterable {
-    case colorPicker
-    case transitions
-}
-
-struct HomeCellData {
-    let item: HomeItem
+struct TransitionItemData {
+    let type: TransitionType
     let text: String
 }
