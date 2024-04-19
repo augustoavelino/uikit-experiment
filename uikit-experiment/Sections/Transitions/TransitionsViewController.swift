@@ -14,6 +14,7 @@ class TransitionsViewController: UEViewController<TransitionsCoordinator> {
     fileprivate static let cellReuseIdentifier = "TransitionsCell"
     private let items: [TransitionItemData] = [
         TransitionItemData(type: .flip, text: "Flip"),
+        TransitionItemData(type: .pageCurl, text: "Page Curl"),
     ]
     
     // MARK: UI

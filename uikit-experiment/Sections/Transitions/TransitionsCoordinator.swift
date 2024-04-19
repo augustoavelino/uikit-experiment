@@ -43,11 +43,18 @@ class TransitionsCoordinator: NSObject, Coordinator {
     func performRoute(for transitionType: TransitionType) {
         switch transitionType {
         case .flip: presentFlipDestination()
+        case .pageCurl: presentPageCurlDestination()
         }
     }
     
     private func presentFlipDestination() {
         let viewController = FlipDestinationViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func presentPageCurlDestination() {
+        let viewController = PageCurlDestinationViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -64,6 +71,9 @@ extension TransitionsCoordinator: UINavigationControllerDelegate {
         }
         if toVC is FlipDestinationViewController || (fromVC is FlipDestinationViewController && isPopping) {
             return FlipTransitioning(reverse: isPopping)
+        }
+        if toVC is PageCurlDestinationViewController || (fromVC is PageCurlDestinationViewController && isPopping) {
+            return PageCurlTransitioning(reverse: isPopping)
         }
         return nil
     }
