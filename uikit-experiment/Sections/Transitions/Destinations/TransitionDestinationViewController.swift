@@ -8,6 +8,13 @@
 import UIKit
 
 class TransitionDestinationViewController: UEViewController<TransitionsCoordinator> {
+    
+    // MARK: Props
+    
+    let transitionType: TransitionType
+    
+    // MARK: UI
+    
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [label, UIView(), buttonStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +52,19 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
         return button
     }()
     
+    // MARK: - Life cycle
+    
+    init(transitionType: TransitionType) {
+        self.transitionType = transitionType
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setup
+    
     override func setupUI() {
         title = "Flip Transition"
         view.backgroundColor = .secondarySystemBackground
@@ -72,5 +92,7 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
     }
     
     /// Override point with navigation purpose.
-    @objc func nextButtonAction(_ sender: UIButton) {}
+    @objc func nextButtonAction(_ sender: UIButton) {
+        coordinator?.performRoute(for: transitionType)
+    }
 }

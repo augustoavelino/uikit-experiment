@@ -41,27 +41,7 @@ class TransitionsCoordinator: NSObject, Coordinator {
     }
     
     func performRoute(for transitionType: TransitionType) {
-        switch transitionType {
-        case .crossDissolve: presentCrossDissolveDestination()
-        case .flip: presentFlipDestination()
-        case .pageCurl: presentPageCurlDestination()
-        }
-    }
-    
-    private func presentCrossDissolveDestination() {
-        let viewController = CrossDissolveDestinationViewController()
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    private func presentFlipDestination() {
-        let viewController = FlipDestinationViewController()
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    private func presentPageCurlDestination() {
-        let viewController = PageCurlDestinationViewController()
+        let viewController = TransitionDestinationViewController(transitionType: transitionType)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -76,15 +56,19 @@ extension TransitionsCoordinator: UINavigationControllerDelegate {
             removeFromParent()
             return nil
         }
-        if toVC is FlipDestinationViewController || (fromVC is FlipDestinationViewController && isPopping) {
-            return FlipTransitioning(reverse: isPopping)
-        }
-        if toVC is PageCurlDestinationViewController || (fromVC is PageCurlDestinationViewController && isPopping) {
-            return PageCurlTransitioning(reverse: isPopping)
-        }
-        if toVC is CrossDissolveDestinationViewController || (fromVC is CrossDissolveDestinationViewController && isPopping) {
-            return CrossDissolveTransitioning(reverse: isPopping)
+        if let transitionDestination = toVC as? TransitionDestinationViewController {
+            return transitioning(for: transitionDestination.transitionType, reverse: isPopping)
+        } else if isPopping, let transitionOrigin = fromVC as? TransitionDestinationViewController {
+            return transitioning(for: transitionOrigin.transitionType, reverse: true)
         }
         return nil
+    }
+    
+    private func transitioning(for transitionType: TransitionType, reverse: Bool) -> (any UIViewControllerAnimatedTransitioning)? {
+        switch transitionType {
+        case .crossDissolve: CrossDissolveTransitioning(reverse: reverse)
+        case .flip: FlipTransitioning(reverse: reverse)
+        case .pageCurl: PageCurlTransitioning(reverse: reverse)
+        }
     }
 }
