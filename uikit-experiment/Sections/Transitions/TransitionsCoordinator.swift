@@ -40,10 +40,16 @@ class TransitionsCoordinator: NSObject, Coordinator {
         rootViewController = viewController
     }
     
-    func performRoute(for transitionType: TransitionType) {
-        let viewController = TransitionDestinationViewController(transitionType: transitionType)
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
+    func performRoute(for transitionType: TransitionType, push: Bool = true) {
+        if push {
+            let viewController = TransitionDestinationViewController(transitionType: transitionType)
+            viewController.coordinator = self
+            navigationController.pushViewController(viewController, animated: true)
+        } else {
+            let viewController = PresentDestinationViewController(transitionType: transitionType)
+            viewController.coordinator = self
+            navigationController.present(viewController, animated: true)
+        }
     }
 }
 

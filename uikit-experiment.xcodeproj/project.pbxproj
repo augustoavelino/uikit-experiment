@@ -27,6 +27,7 @@
 		65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E95D4B2BD026AF00B3F86B /* AppDelegate.swift */; };
 		65E95D552BD026AF00B3F86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D542BD026AF00B3F86B /* Assets.xcassets */; };
 		65E95D582BD026AF00B3F86B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 65E95D572BD026AF00B3F86B /* Base */; };
+		65EFC8D12BD401370077E69C /* PresentDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFC8D02BD401370077E69C /* PresentDestinationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		65E95D542BD026AF00B3F86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E95D572BD026AF00B3F86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E95D592BD026AF00B3F86B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65EFC8D02BD401370077E69C /* PresentDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDestinationViewController.swift; sourceTree = "<group>"; };
 		C8FDEA92FECE4FF5AF09A480 /* Pods-uikit-experiment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uikit-experiment.release.xcconfig"; path = "Target Support Files/Pods-uikit-experiment/Pods-uikit-experiment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				657B40142BD334C300704CEA /* TransitionDestinationViewController.swift */,
+				65EFC8D02BD401370077E69C /* PresentDestinationViewController.swift */,
 			);
 			path = Destinations;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6559FE0C2BD07A36003EC926 /* UEViewController.swift in Sources */,
+				65EFC8D12BD401370077E69C /* PresentDestinationViewController.swift in Sources */,
 				65E95D4C2BD026AF00B3F86B /* AppDelegate.swift in Sources */,
 				657B40172BD343D100704CEA /* CrossDissolveTransitioning.swift in Sources */,
 				657B40112BD3347C00704CEA /* PageCurlTransitioning.swift in Sources */,
