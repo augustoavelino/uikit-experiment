@@ -13,6 +13,7 @@ class TransitionsViewController: UEViewController<TransitionsCoordinator> {
     
     fileprivate static let cellReuseIdentifier = "TransitionsCell"
     private let items: [TransitionItemData] = [
+        TransitionItemData(type: .crossDissolve, text: "Cross Dissolve"),
         TransitionItemData(type: .flip, text: "Flip"),
         TransitionItemData(type: .pageCurl, text: "Page Curl"),
     ]

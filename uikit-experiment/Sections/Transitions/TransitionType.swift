@@ -8,6 +8,7 @@
 import Foundation
 
 enum TransitionType: CaseIterable {
+    case crossDissolve
     case flip
     case pageCurl
 }
