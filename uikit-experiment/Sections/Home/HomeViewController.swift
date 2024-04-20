@@ -15,6 +15,7 @@ class HomeViewController: UEViewController<AppCoordinator> {
     private let items: [HomeCellData] = [
         HomeCellData(item: .colorPicker, text: "Color Picker"),
         HomeCellData(item: .transitions, text: "Transitions"),
+        HomeCellData(item: .tapper, text: "Tapper"),
     ]
     
     // MARK: UI
@@ -50,6 +51,7 @@ class HomeViewController: UEViewController<AppCoordinator> {
         switch item {
         case .colorPicker: coordinator?.presentColorPicker()
         case .transitions: coordinator?.presentTransitions()
+        case .tapper: coordinator?.presentTapper()
         }
     }
 }
@@ -87,6 +89,7 @@ extension HomeViewController: UITableViewDelegate {
 enum HomeItem: CaseIterable {
     case colorPicker
     case transitions
+    case tapper
 }
 
 struct HomeCellData {

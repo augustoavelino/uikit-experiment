@@ -35,6 +35,13 @@ final class AppCoordinator: NSObject, Coordinator {
         coordinator.start()
     }
     
+    func presentTapper() {
+        let viewModel = TapperViewModel()
+        let viewController = TapperViewController(viewModel: viewModel)
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
     func removeChild(_ child: any Coordinator) {
         children.removeAll(where: { $0.isEqual(child) })
     }
