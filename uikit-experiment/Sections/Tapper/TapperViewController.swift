@@ -56,14 +56,14 @@ class TapperViewController: UEViewController<AppCoordinator> {
         let tapGesture = UITapGestureRecognizer()
         tapGesture.rx.event
             .map({ _ in () })
-            .bind(to: viewModel.increment)
+            .bind(to: viewModel.incrementRelay)
             .disposed(by: disposeBag)
         view.addGestureRecognizer(tapGesture)
     }
     
     private func bindLabel() {
         viewModel.counter
-            .map({ "\($0)" })
+            .map({ "🪙 \($0)" })
             .bind(to: counterLabel.rx.text)
             .disposed(by: disposeBag)
     }

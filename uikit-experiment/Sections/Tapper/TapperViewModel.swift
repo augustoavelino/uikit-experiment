@@ -10,14 +10,14 @@ import RxSwift
 
 protocol TapperViewModelProtocol: AnyObject {
     var counter: BehaviorRelay<Int> { get }
-    var incrementValue: BehaviorRelay<Int> { get }
-    var increment: PublishRelay<Void> { get }
+    var incrementValueRelay: BehaviorRelay<Int> { get }
+    var incrementRelay: PublishRelay<Void> { get }
 }
 
 class TapperViewModel: TapperViewModelProtocol {
     let counter = BehaviorRelay<Int>(value: 0)
-    let incrementValue = BehaviorRelay<Int>(value: 1)
-    let increment = PublishRelay<Void>()
+    let incrementValueRelay = BehaviorRelay<Int>(value: 1)
+    let incrementRelay = PublishRelay<Void>()
     
     let disposeBag = DisposeBag()
     
@@ -26,7 +26,8 @@ class TapperViewModel: TapperViewModelProtocol {
     }
     
     private func bind() {
-        increment.withLatestFrom(Observable.combineLatest(counter, incrementValue))
+        incrementRelay
+            .withLatestFrom(Observable.combineLatest(counter, incrementValueRelay))
             .map({ $0 + $1 })
             .bind(to: counter)
             .disposed(by: disposeBag)
