@@ -15,8 +15,15 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
     
     // MARK: UI
     
+    let imageView: UIImageView = {
+        let imageView = UIImageView(image: randomBackground())
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [label, UIView(), buttonStackView])
+        let stackView = UIStackView(arrangedSubviews: [UIView(), label, buttonStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0
@@ -32,7 +39,6 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
     lazy var label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Press \"Next\" to continue\nor \"Previous\" to go back"
         return label
     }()
     
@@ -68,8 +74,18 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
     override func setupUI() {
         title = "Flip Transition"
         view.backgroundColor = .secondarySystemBackground
+        setupImageView()
         setupStackView()
+        setupContent()
         setupButtonActions()
+    }
+    
+    private func setupImageView() {
+        view.addSubview(imageView)
+        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func setupStackView() {
@@ -78,6 +94,16 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40.0).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40.0).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    private func setupContent() {
+        label.textAlignment = .center
+        label.text = "Press \"Next\" to continue\nor \"Previous\" to go back"
+        label.shadowColor = .black.withAlphaComponent(0.5)
+        label.shadowOffset = CGSize(width: 0, height: 2)
+        label.backgroundColor = .systemBlue.withAlphaComponent(0.5)
+        label.layer.cornerRadius = 8.0
+        label.layer.masksToBounds = true
     }
     
     private func setupButtonActions() {
@@ -94,5 +120,11 @@ class TransitionDestinationViewController: UEViewController<TransitionsCoordinat
     /// Override point with navigation purpose.
     @objc func nextButtonAction(_ sender: UIButton) {
         coordinator?.performRoute(for: transitionType)
+    }
+    
+    // TODO: Move to an adequate location later
+    private static func randomBackground() -> UIImage? {
+        let resource = UEImage.Background.allCases.randomElement() ?? UEImage.Background.random1
+        return .resource(resource)
     }
 }
